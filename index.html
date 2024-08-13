@@ -7,25 +7,149 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="./img/web-logo.webp">
     <title>IKOMA</title>
+    <style>
+        .lang-en .language a[href="/"] {
+            font-weight: bold;
+        }
+        .lang-cn .language a[href="/Page404.html"] {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav>
-        <div class="nav-logo">
-            <img src="./img/web-logo.png" alt="nav-logo">
-        </div>
-        <ul>
-            <li><a href="#">COMPANY</a></li>
-            <li><a href="#">NEWS</a></li>
-            <li><a href="#">PRODUCT</a></li>
-            <li><a href="#">SUPPORT</a></li>
-            <li><a href="#">CONTACT</a></li>
-        </ul>
-        <div class="language">
-            <a href="#">EN</a>
-            /
-            <a href="#">CN</a>
+        <div class="navbar">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="./img/web-logo-n.webp" alt="nav-logo" />
+                </a>
+            </div>
+            <ul>
+                <li><a href="#">COMPANY</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">PRODUCT</a></li>
+                <li><a href="#">SUPPORT</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <div class="language">
+                    <a href="/" class="en">EN</a>
+                    /
+                    <a href="/Page404.html" class="cn">CN</a>
+                    
+                </div>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu"><img src="./img/bar-icon.svg" alt="bar-icon"></button>
         </div>
     </nav>
+    
+    <!-- HOMEPAGE -->
+    <div class="home-banner">
+        <img src="./img/home-banner.webp" alt="home-banner"></img>
+        <div class="contact-us-btn">
+            <a href="#">
+                <div class="contact-us-text">CONTACT US 
+                    <img src="./img/icon-next.webp" alt="icon-next"></img>
+                </div>
+                <img src="./img/contact-us-btn.webp" alt="contact-us-btn"></img>
+            </a>
+        </div>
+        <div class="home-banner-text">
+            <h2>Absolutely supply good quality and comfort shock absorber</h2>
+        </div>
+    </div>
+
+    <!-- box -->
+     <div class="box-1">
+        <div class="box-2" onclick="window.location.href='#'">
+            <div class="box-3">
+                <img src="./img/Rectangle 64.png" alt="news-img">
+            </div>
+            <div class="box-4">
+                <h3>NEWS</h3>
+                <img src="./img/icon-next.webp" alt="icon-next-box">
+            </div>
+        </div>
+        <div class="box-2" style="background-color: #FF9900;" onclick="window.location.href='#'">
+            <div class="box-3">
+                <img src="./img/Rectangle 52.png" alt="news-img">
+            </div>
+            <div class="box-4">
+                <h3>PRODUCT</h3>
+                <img src="./img/icon-next.webp" alt="icon-next-box">
+            </div>
+        </div>
+        <div class="box-2" style="background-color: #3B322E;" onclick="window.location.href='#'">
+            <div class="box-3">
+                <img src="./img/Rectangle 51.png" alt="news-img">
+            </div>
+            <div class="box-4">
+                <h3 style="color: #FFF;">SUPROT</h3>
+                <img src="./img/Vector 10.png" alt="icon-next-box" >
+            </div>
+        </div>
+     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bar">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="./img/web-logo-n.webp" alt="nav-logo" />
+                </a>
+            </div>
+            <ul>
+                <li><a href="#">COMPANY</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">PRODUCT</a></li>
+                <li><a href="#">SUPPORT</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>   
+        </div>
+        <div class="footer-text">
+            <p>Absolutely supply good quality and comfort shock absorber</p>
+            <div class="footer-icon">
+                <ul>
+                    <li><a href="#"><img src="./img/instagram.webp"></img></a></li>
+                    <li><a href="#"><img src="./img/email.webp"></img></a></li>
+                    <li><a href="#"><img src="./img/facebook.webp"></img></a></li>
+                    <li><a href="#"><img src="./img/whatapp.webp"></img></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-line"></div>
+        <div class="footer-name">
+            <h6>© IKOMA CO., LTD. All Rights Reserved Designed</h6>
+            <p>By RUI Design Studio Inc.</p>
+        </div>
+    </footer>
+
+
+    <script>
+    const location = useLocation();
+    const [selectedLanguage, setSelectedLanguage] = useState('EN');
+
+    useEffect(() => {
+        if (location.pathname === '/Page404') {
+            setSelectedLanguage('CN');
+        } else {
+            setSelectedLanguage('EN');
+        }
+    }, [location.pathname]);
+
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navMenu = document.querySelector('nav ul');
+        const menuToggle = document.querySelector('.menu-toggle');
+    
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    });
+
+
+    </script>
 </body>
 </html#
